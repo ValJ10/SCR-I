@@ -1,0 +1,24 @@
+<div ng-app="myApp" ng-controller="PlayerController" class="col-md-4">
+	<table class="table table-hover" width="100">
+        <tr>
+            <th>Number</th>
+            <th>Position</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Nationality</th>
+            <!-- <th>Market Value</th> -->
+        </tr>
+        <tr ng-repeat="player in players">
+            <td>{{player.jerseyNumber}}</td>
+            <td>{{player.position}}</td>
+            <td>{{player.name}}</td>
+            <td>{{player.dateOfBirth | date:'longDate'}}</td>
+            <td>{{player.nationality}}</td>
+            <!-- <td>{{player.marketValue}}</td> -->
+        </tr>
+    </table>
+</div>
+
+<h1>Next Matches</h1>
+<div>
+</div>

@@ -1,0 +1,68 @@
+
+
+
+<div ng-app="myApp" ng-controller="TablesController" class="col-md-4">
+	<h1>{{leagueCaption}}</h1>
+	    <table class="table table-hover" width="100">
+        <tr>
+            <th>Team</th>
+            <th>Played</th>
+            <th>Win</th>
+            <th>Losses</th>
+            <th>Draws</th>
+            <th>Goals Scored</th>
+            <th>Goals Against</th>
+            <th>Goal Difference</th>
+            <th>Points</th>
+        </tr>
+        <tr ng-repeat="team in standings" ng-click = "showPlayers(sid, $index)">
+            <td>
+                <image ng-src="{{team.crestURI}}" height="30" width="30"/>
+                     {{team.teamName}}
+            </td>
+            <td>{{team.playedGames}}</td>
+            <td>{{team.wins}}</td>
+            <td>{{team.losses}}</td>
+            <td>{{team.draws}}</td>
+            <td>{{team.goals}}</td>
+            <td>{{team.goalsAgainst}}</td>
+            <td>{{team.goalDifference}}</td>
+            <td>{{team.points}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<h2>Fixtures</h2>
+<div ng-app="myApp" ng-controller="FixtureController">
+
+  <div>
+    <h3>
+      <i ng-click="decreaseMatch()" class="fa fa-chevron-left" aria-hidden="true"></i>
+      Matchday 
+      <i ng-click="increaseMatch()" class="fa fa-chevron-right" aria-hidden="true"></i>
+    </h3>
+  </div>
+
+    {{matchday}} out <span ng-bind = "gamesPlayed"></span>
+    
+
+        <table class="table table-hover">
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>HomeTeam</th>
+          <th>Score</th>
+          <th>AwayTeam</th>
+        </tr>
+
+        <tr ng-repeat= "matches in fixtures">
+          <td>{{matches.date | date: 'fullDate'}}</td>
+          <td>{{matches.date | date: 'shortTime'}}</td>
+          <td>{{matches.homeTeamName}}</td>
+          <td>{{matches.result.goalsHomeTeam}}-{{matches.result.goalsAwayTeam}} </td>
+          <td>{{matches.awayTeamName}}</td>
+        </tr>
+    </table>
+
+</div>
