@@ -3,7 +3,7 @@
 angular.module('myApp.Players', ['ngRoute'])
 
 
-    // Make The Routes Players/players.js
+    //  Players/players.js
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/Players', {
             templateUrl: 'Players/players.html',
