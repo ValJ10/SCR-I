@@ -3,7 +3,7 @@
 angular.module('myApp.Tables', ['ngRoute'])
 
 
-    // Make The Fucking Routes
+    // Routes
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/leagueTable', {
             templateUrl: 'Tables/tables.html',
