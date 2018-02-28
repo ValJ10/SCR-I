@@ -3,7 +3,7 @@
 angular.module('myApp.Leagues', ['ngRoute'])
 
 
-    // Make The Fucking Routes
+    // Routes for each season
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/season/:singleSeason', {
             templateUrl: 'Leagues/leagues.html',
@@ -107,7 +107,7 @@ angular.module('myApp.Leagues', ['ngRoute'])
         $scope.leagues = ($scope.seasons);
 
         // Val : we need a way to keep track of the leagues identification. So we can use it for the next step.
-        // Extra parameter so we can do more damage lets go
+        // Extra parameter so we can do more damage lets go. also try to decouple our files.
 
         $scope.showLeagueTable = function(league){
             $location.url('leagueTable' + '?leagueId=' + league + '&' +'matchID=' + 1);
